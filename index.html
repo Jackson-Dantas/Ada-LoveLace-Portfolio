@@ -58,7 +58,7 @@
                     I also like to take my chances of winning big. 
                 </p>
                 <p>
-                    Fun fact! I've been programing for 
+                    Fun fact! I've been programing for <span id="time"></span> seconds!!
                 </p>
             </div>
             <div class="col-md-6">
@@ -195,6 +195,19 @@
                 images[2].src = 'https://camo.githubusercontent.com/38639aad67f6b44c719b0dfaa8957dd59fc172fee0b8593382e23c811ed9a20d/68747470733a2f2f626c6f672e6765656b68756e7465722e636f6d2e62722f77702d636f6e74656e742f75706c6f6164732f323032322f30312f6164612d6c6f76656c6163652d322e6a7067'
              }
         }
+
+      //Time countdown
+      const adaBirthDate = '1815-12-10T15:37:25';
+      let dateStart= new Date(adaBirthDate).getTime();
+      const timeElement = document.getElementById('time');
+      const intlNumberFormatter = new Intl.NumberFormat("en-US");
+      
+      window.setInterval(() =>{
+        let dateNow = new Date().getTime();
+        let diferrenceDates = Math.floor((dateNow - dateStart)/1000) ;
+        timeElement.innerHTML = intlNumberFormatter.format(diferrenceDates);
+      }, 1000)
+
     </script>
 </body>
 </html>
